@@ -23,7 +23,6 @@ class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
   static BuildContext? get context => null;
   static final theme = Theme.of(context!);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

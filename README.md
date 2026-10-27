@@ -18,6 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ```dart
 
+// feat: creating MaterialApp and adding title and theme color
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +27,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,10 +35,29 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      home: ProfilePage(),
     );
   }
 }
 
-// feat: creating MaterialApp and adding title and theme color
+// feat: adding scaffold and appbar
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+  static BuildContext? get context => null;
+  static final theme = Theme.of(context!);
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Profile Page"),
+          centerTitle: true,
+          backgroundColor: theme.colorScheme.primaryContainer,
+          foregroundColor: theme.colorScheme.onPrimaryContainer,
+        ),
+      ),
+    );
+  }
+}
 
 ```
