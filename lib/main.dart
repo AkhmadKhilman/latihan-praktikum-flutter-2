@@ -11,9 +11,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Profile Menu",
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurpleAccent,
+          brightness: Brightness.dark,
+        ),
       ),
+
+      themeMode: ThemeMode.dark,
       home: ProfilePage(),
     );
   }
@@ -21,18 +28,16 @@ class MyApp extends StatelessWidget {
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
-  static BuildContext? get context => null;
-  static final theme = Theme.of(context!);
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Profile Page"),
-          centerTitle: true,
-          backgroundColor: theme.colorScheme.primaryContainer,
-          foregroundColor: theme.colorScheme.onPrimaryContainer,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Profile Page",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
         ),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
     );
   }
