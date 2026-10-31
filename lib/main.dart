@@ -62,6 +62,21 @@ class ProfilePage extends StatelessWidget {
                   backgroundColor: Colors.purple,
                   child: Icon(Icons.person_3, size: 30),
                 ),
+
+                SizedBox(height: 15),
+
+                Column(
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
