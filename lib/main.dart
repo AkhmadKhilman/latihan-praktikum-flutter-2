@@ -30,7 +30,7 @@ class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
 
   final String name = "Akhmad Khilman Al Khafid";
-  final String role = "Junior Web Developers";
+  final String status = "Mahasiswa - Software Engineering";
 
   final List<String> projects = [
     "Nebulon - Web based e-commerce application",
@@ -54,10 +54,15 @@ class ProfilePage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsetsGeometry.all(20),
           child: Center(
-            child: const CircleAvatar(
-              radius: 30,
-              backgroundColor: Colors.purple,
-              child: Icon(Icons.person_3, size: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Colors.purple,
+                  child: Icon(Icons.person_3, size: 30),
+                ),
+              ],
             ),
           ),
         ),
