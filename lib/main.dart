@@ -27,7 +27,17 @@ class MyApp extends StatelessWidget {
 }
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  ProfilePage({super.key});
+
+  final String name = "Akhmad Khilman Al Khafid";
+  final String role = "Junior Web Developers";
+
+  final List<String> projects = [
+    "Nebulon - Web based e-commerce application",
+    "Jelajah Nusantara - Web based ticket sales application for various modes of transport",
+    "Monk Notions - Singla Page Application (SPA) based application for recording summaries, integrated with AI",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
