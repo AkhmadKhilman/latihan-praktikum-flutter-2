@@ -39,6 +39,19 @@ class ProfilePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
+
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsetsGeometry.all(20),
+          child: Center(
+            child: const CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.purple,
+              child: Icon(Icons.person_3, size: 30),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
