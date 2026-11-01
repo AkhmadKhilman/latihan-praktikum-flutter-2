@@ -93,7 +93,14 @@ class ProfilePage extends StatelessWidget {
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content: Text("Fitur Edit belum dibuat"),
+                            content: Text(
+                              "Fitur Edit belum dibuat",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            ),
+                            backgroundColor: Color.fromRGBO(0, 90, 156, 1),
                           ),
                         );
                       },
