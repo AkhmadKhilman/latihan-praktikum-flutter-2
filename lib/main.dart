@@ -75,6 +75,18 @@ class ProfilePage extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
+
+                    // Malam refactor: eextract profile status to the view
+                    SizedBox(height: 10),
+
+                    Text(
+                      status,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ],
                 ),
               ],
