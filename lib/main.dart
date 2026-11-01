@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurpleAccent,
+          seedColor: Color.fromRGBO(27, 54, 93, 1),
           brightness: Brightness.dark,
         ),
       ),
@@ -47,7 +47,7 @@ class ProfilePage extends StatelessWidget {
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        backgroundColor: Color.fromRGBO(0, 90, 156, 1),
       ),
 
       body: SingleChildScrollView(
@@ -59,8 +59,8 @@ class ProfilePage extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   radius: 30,
-                  backgroundColor: Colors.purple,
-                  child: Icon(Icons.person_3, size: 30),
+                  backgroundColor: Color.fromRGBO(96, 193, 229, 1),
+                  child: Icon(Icons.person_3, size: 30, color: Colors.black),
                 ),
 
                 SizedBox(height: 15),
@@ -89,7 +89,6 @@ class ProfilePage extends StatelessWidget {
 
                     SizedBox(height: 18),
 
-                    // Fitur Edit Profile - feat: create edit profile button not yet implemented
                     ElevatedButton.icon(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -101,12 +100,8 @@ class ProfilePage extends StatelessWidget {
                       icon: Icon(Icons.edit),
                       label: Text("Edit Profile"),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Theme.of(context)
-                            .colorScheme
-                            .secondaryContainer,
-                        foregroundColor: Theme.of(context)
-                            .colorScheme
-                            .onSecondaryContainer,
+                        backgroundColor: Color.fromRGBO(96, 193, 229, 1),
+                        foregroundColor: Colors.black,
                       ),
                     ),
 
