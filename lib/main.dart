@@ -76,7 +76,6 @@ class ProfilePage extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
 
-                    // Malam refactor: eextract profile status to the view
                     SizedBox(height: 10),
 
                     Text(
@@ -87,6 +86,31 @@ class ProfilePage extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
+
+                    SizedBox(height: 18),
+
+                    // Fitur Edit Profile - feat: create edit profile button not yet implemented
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Fitur Edit belum dibuat"),
+                          ),
+                        );
+                      },
+                      icon: Icon(Icons.edit),
+                      label: Text("Edit Profile"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Theme.of(context)
+                            .colorScheme
+                            .secondaryContainer,
+                        foregroundColor: Theme.of(context)
+                            .colorScheme
+                            .onSecondaryContainer,
+                      ),
+                    ),
+
+                    SizedBox(height: 18),
                   ],
                 ),
               ],
