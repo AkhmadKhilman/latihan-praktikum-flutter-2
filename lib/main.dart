@@ -26,9 +26,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   ProfilePage({super.key});
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   final String name = "Akhmad Khilman Al Khafid";
   final String status = "Mahasiswa - Software Engineering";
 
@@ -123,11 +128,11 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          stats(count: "3", label: "Projects"),
+                          Stats(count: "3", label: "Projects"),
 
-                          stats(count: "3.8", label: "IPK"),
+                          Stats(count: "3.8", label: "IPK"),
 
-                          stats(count: "5", label: "Skills"),
+                          Stats(count: "5", label: "Skills"),
                         ],
                       ),
                     ),
@@ -140,15 +145,8 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
-}
 
-class stats extends StatelessWidget {
-  final String count;
-  final String label;
-  const stats({super.key, required this.count, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
+  Widget Stats({required String count, required String label}) {
     return Column(
       children: [
         Text(
