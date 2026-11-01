@@ -128,11 +128,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Stats(count: "3", label: "Projects"),
+                          stats(count: "3", label: "Projects"),
 
-                          Stats(count: "3.8", label: "IPK"),
+                          stats(count: "3.8", label: "IPK"),
 
-                          Stats(count: "5", label: "Skills"),
+                          stats(count: "5", label: "Skills"),
                         ],
                       ),
                     ),
@@ -187,6 +187,82 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
+
+                    SizedBox(height: 24),
+
+                    Text(
+                      "Contact Me:",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+
+                    SizedBox(height: 12),
+
+                    Container(
+                      padding: const EdgeInsetsGeometry.symmetric(vertical: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    "Fitur WhatsApp belum dibuat",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  backgroundColor: Color.fromRGBO(
+                                    0,
+                                    90,
+                                    156,
+                                    1,
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: Icon(Icons.phone),
+                            label: Text("WhatsApp"),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromRGBO(72, 161, 17, 1),
+                              foregroundColor: Colors.black,
+                            ),
+                          ),
+
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    "Fitur Email belum dibuat",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  backgroundColor: Color.fromRGBO(
+                                    0,
+                                    90,
+                                    156,
+                                    1,
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: Icon(Icons.mail),
+                            label: Text("Email"),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromRGBO(225, 0, 0, 1),
+                              foregroundColor: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -197,7 +273,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget Stats({required String count, required String label}) {
+  Widget stats({required String count, required String label}) {
     return Column(
       children: [
         Text(
