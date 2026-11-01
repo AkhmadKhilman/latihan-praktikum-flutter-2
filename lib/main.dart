@@ -136,6 +136,57 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
+
+                    SizedBox(height: 25),
+
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(160, 224, 239, 0.7),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Projects",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(height: 8),
+                          Divider(),
+
+                          ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: projects.length,
+                            itemBuilder: (context, index) {
+                              return ListTile(
+                                leading: Icon(
+                                  Icons.work,
+                                  color: Color.fromRGBO(0, 90, 156, 1),
+                                ),
+                                title: Text(
+                                  projects[index],
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
