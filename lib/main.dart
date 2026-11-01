@@ -33,9 +33,9 @@ class ProfilePage extends StatelessWidget {
   final String status = "Mahasiswa - Software Engineering";
 
   final List<String> projects = [
-    "Nebulon - Web based e-commerce application",
-    "Jelajah Nusantara - Web based ticket sales application for various modes of transport",
-    "Monk Notions - Singla Page Application (SPA) based application for recording summaries, integrated with AI",
+    "Nebulon - E-commerce application",
+    "Jelajah Nusantara - Sales various modes of transport application",
+    "Monk Notions - Recording summaries application, integrated with AI",
   ];
 
   @override
@@ -112,7 +112,25 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 18),
+                    SizedBox(height: 21),
+
+                    Container(
+                      padding: const EdgeInsetsGeometry.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(160, 224, 239, 0.7),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          stats(count: "3", label: "Projects"),
+
+                          stats(count: "3.8", label: "IPK"),
+
+                          stats(count: "5", label: "Skills"),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -120,6 +138,37 @@ class ProfilePage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class stats extends StatelessWidget {
+  final String count;
+  final String label;
+  const stats({super.key, required this.count, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            fontSize: 21,
+            fontWeight: FontWeight.bold,
+            color: Colors.black87,
+          ),
+        ),
+        SizedBox(height: 4),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w300,
+            color: Colors.black54,
+          ),
+        ),
+      ],
     );
   }
 }
